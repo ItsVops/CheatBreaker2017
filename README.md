@@ -3,14 +3,14 @@ version files & launcher files for oldcheatbreaker.com
 
 put folder in versions
 
-##to use launcher
+## to use launcher
 
 ``npm i electron -g``
 
 ``electron .``
 
 
-##to build launcher (exe)
+## to build launcher (exe)
 
 ``npm i electron-toolkit``
 
