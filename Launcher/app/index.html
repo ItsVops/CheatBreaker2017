@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CheatBreaker</title>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<link href="https://oldcheatbreaker.com/news.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+		<script src="./js/tabs.js"></script>
+		<script src="./js/launch.js"></script>
+		<script src="./js/buttons.js"></script>
+		<script src="./js/whitelist.js"></script>
+		<script src="./js/bans.js"></script>
+		<script src="./js/motd.js"></script>
+		<script src="./js/ram.js"></script>
+		<script src="https://mcapi.us/scripts/minecraft.js"></script>
+	</head>
+		<body onload="onLoad()">
+		<div class="pseudo-body">
+			<!-- Header -->
+			<nav class="navbar" style="background-color:#252525; height: 80px; -webkit-app-region: drag;">
+			<a class="navbar-brand">
+	 		<img src="images/logo.png">
+			</a>
+  			</nav>
+			<header>
+				<p class="home-tab nav-bar-thing" onclick="loadHome()">Home</p>
+				<p class="servers-tab nav-bar-thing" onclick="loadServers()">Servers</p>
+				<p class="settings-tab nav-bar-thing" onclick="loadSettings()">Settings</p>
+				<p class="about-tab nav-bar-thing" onclick="loadAbout()">About</p>
+				<div class="accounthead accounthead2"><img draggable="false" id="account-icon" style="padding: 0px 15px"><p id="account-name" style="display: inline-block; direction: ltr;">User</p></div>
+				<p class="close-button nav-bar-thing-close" draggable="false" onclick="closeLauncher()"><img src="images/close.png"></p>
+				
+				<div id="header-1" class="header-image animate__animated animate__fadeInLeft animate__faster">
+					<a draggable="false"><img draggable="false" src="images/home-banner.jpg" class="header-image"></a>
+				</div>
+
+				<div id="header-2" class="header-image2 animate__animated animate__fadeInLeft animate__faster">
+					<a draggable="false"><img draggable="false" src="images/home-banner.jpg" class="header-image"></a>
+				</div>
+
+				<div id="header-3"  class="header-image3 animate__animated animate__fadeInLeft animate__faster">
+					<a draggable="false"><img draggable="false" src="images/home-banner.jpg" class="header-image"></a>
+				</div>
+
+				<div id="header-4" class="header-image4 animate__animated animate__fadeInLeft animate__faster">
+					<a draggable="false"><img draggable="false" src="images/home-banner.jpg" class="header-image"></a>
+				</div>
+					
+			</div>
+			</header>
+
+			<!-- Quick Links -->
+			<div id="drip-why" class="quick-connect-div animate__animated animate__fadeInLeft animate__faster">
+				<p style="font-size:15pt; margin-top:-31.5%; margin-left:75%; font-size:21pt; color:black; position: absolute; z-index:1000;">Quick Links</p>
+				<p class="ql-box" style="font-size:15pt; margin-top:-27.5%; cursor: pointer;" onclick="loadAccounts()"><img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/switchaccount.png"> Switch Account</p>
+				<p class="ql-box2" style="font-size:15pt; margin-top:-22.5%; cursor: pointer;" onclick="loadServers()"><img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/serverlist.png"> Server List</p>
+				<p class="ql-box3" style="font-size:15pt; margin-top:-17.5%; cursor: pointer;" onclick="loadSettings()"><img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/settings.png"> Settings</p>
+				<p class="ql-box4" style="font-size:15pt; margin-top:-12.5%; cursor: pointer;" onclick="loadChangelog()"><img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/changelog.png"> Changelog</p>
+				<!-- Quick Connect -->
+				<p style="margin-top: -7.5%; margin-left: 75%; font-size:20pt; color:black; position: absolute;">Quick Connect</p>
+				<a><img style="margin-top: -4.8%; margin-left: 76.5%; width:52px; height:52px; cursor: pointer;" class="minheq-image" src="images/minehq.png" onclick="startupLaunch('minehq.com')"></a>
+				<a><img style="margin-top: -8.7%; margin-left: 84.5%; width:52px; height:52px; cursor: pointer;" src="images/arcane.png" onclick="startupLaunch('arcane.cc')"></a>
+				<a><img style="margin-top: -13.6%; margin-left: 92.5%; width:44px; height:52px; cursor: pointer;" src="images/ultra.png" onclick="startupLaunch('ultra.rip')"></a>
+			</div>
+
+			<!-- Quick Links -->
+			<div id="drip-why2" class="quick-connect-div2 animate__animated animate__fadeInLeft animate__faster">
+				<p style="font-size:15pt; margin-top:-31.5%; margin-left:75%; font-size:21pt; color:black; position: absolute; z-index:1000;">Quick Links</p>
+				<p class="ql-box" style="font-size:15pt; margin-top:-27.5%; cursor: pointer;" onclick="loadAccounts()"><img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/switchaccount.png"> Switch Account</p>
+				<p class="ql-box2" style="font-size:15pt; margin-top:-22.5%; cursor: pointer;" onclick="loadServers()"><img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/serverlist.png"> Server List</p>
+				<p class="ql-box3" style="font-size:15pt; margin-top:-17.5%; cursor: pointer;" onclick="loadSettings()"><img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/settings.png"> Settings</p>
+				<p class="ql-box4" style="font-size:15pt; margin-top:-12.5%; cursor: pointer;" onclick="loadChangelog()"><img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/changelog.png"> Changelog</p>
+				<!-- Quick Connect -->
+				<p style="margin-top: -7.5%; margin-left: 75%; font-size:20pt; color:black; position: absolute;">Quick Connect</p>
+				<a><img style="margin-top: -4.8%; margin-left: 76.5%; width:52px; height:52px; cursor: pointer;" class="minheq-image" src="images/minehq.png" onclick="startupLaunch('minehq.com')"></a>
+				<a><img style="margin-top: -8.7%; margin-left: 84.5%; width:52px; height:52px; cursor: pointer;" src="images/arcane.png" onclick="startupLaunch('arcane.cc')"></a>
+				<a><img style="margin-top: -13.6%; margin-left: 92.5%; width:44px; height:52px; cursor: pointer;" src="images/ultra.png" onclick="startupLaunch('ultra.rip')"></a>
+			</div>
+
+									<!-- Quick Links -->
+			<div id="drip-why3" class="quick-connect-div3 animate__animated animate__fadeInLeft animate__faster">
+				<p style="font-size:15pt; margin-top:-31.5%; margin-left:75%; font-size:21pt; color:black; position: absolute; z-index:1000;">Quick Links</p>
+				<p class="ql-box" style="font-size:15pt; margin-top:-27.5%; cursor: pointer;" onclick="loadAccounts()"><img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/switchaccount.png"> Switch Account</p>
+				<p class="ql-box2" style="font-size:15pt; margin-top:-22.5%; cursor: pointer;" onclick="loadServers()"><img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/serverlist.png"> Server List</p>
+				<p class="ql-box3" style="font-size:15pt; margin-top:-17.5%; cursor: pointer;" onclick="loadSettings()"><img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/settings.png"> Settings</p>
+				<p class="ql-box4" style="font-size:15pt; margin-top:-12.5%; cursor: pointer;" onclick="loadChangelog()"><img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/changelog.png"> Changelog</p>
+				<!-- Quick Connect -->
+				<p style="margin-top: -7.5%; margin-left: 75%; font-size:20pt; color:black; position: absolute;">Quick Connect</p>
+				<a><img style="margin-top: -4.8%; margin-left: 76.5%; width:52px; height:52px; cursor: pointer;" class="minheq-image" src="images/minehq.png" onclick="startupLaunch('minehq.com')"></a>
+				<a><img style="margin-top: -8.7%; margin-left: 84.5%; width:52px; height:52px; cursor: pointer;" src="images/arcane.png" onclick="startupLaunch('arcane.cc')"></a>
+				<a><img style="margin-top: -13.6%; margin-left: 92.5%; width:44px; height:52px; cursor: pointer;" src="images/ultra.png" onclick="startupLaunch('ultra.rip')"></a>
+			</div>
+
+			<!-- Quick Links -->
+			<div id="drip-why4" class="quick-connect-div4 animate__animated animate__fadeInLeft animate__faster">
+				<p style="font-size:15pt; margin-top:-31.5%; margin-left:75%; font-size:21pt; color:black; position: absolute; z-index:1000;">Quick Links</p>
+				<p class="ql-box" style="font-size:15pt; margin-top:-27.5%; cursor: pointer;" onclick="loadAccounts()"><img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/switchaccount.png"> Switch Account</p>
+				<p class="ql-box2" style="font-size:15pt; margin-top:-22.5%; cursor: pointer;" onclick="loadServers()"><img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/serverlist.png"> Server List</p>
+				<p class="ql-box3" style="font-size:15pt; margin-top:-17.5%; cursor: pointer;" onclick="loadSettings()"><img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/settings.png"> Settings</p>
+				<p class="ql-box4" style="font-size:15pt; margin-top:-12.5%; cursor: pointer;" onclick="loadChangelog()"><img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/changelog.png"> Changelog</p>
+				<!-- Quick Connect -->
+				<p style="margin-top: -7.5%; margin-left: 75%; font-size:20pt; color:black; position: absolute;">Quick Connect</p>
+				<a><img style="margin-top: -4.8%; margin-left: 76.5%; width:52px; height:52px; cursor: pointer;" class="minheq-image" src="images/minehq.png" onclick="startupLaunch('minehq.com')"></a>
+				<a><img style="margin-top: -8.7%; margin-left: 84.5%; width:52px; height:52px; cursor: pointer;" src="images/arcane.png" onclick="startupLaunch('arcane.cc')"></a>
+				<a><img style="margin-top: -13.6%; margin-left: 92.5%; width:44px; height:52px; cursor: pointer;" src="images/ultra.png" onclick="startupLaunch('ultra.rip')"></a>
+			</div>
+
+				<!-- Launch 1.7.10 button -->
+				<div class="login-button" onclick="startupLaunch()">
+					<span id="hidethis" class="launch-button animate__animated animate__fadeInLeft animate__faster">
+						<input id="launchbtn" class="animate__animated animate__faster" style="border: none; outline: none; background: none;" type="button" value="Launch 1.7.10" onclick="startupLaunch()"/>
+					</span>
+					
+				</div>
+
+				<div id="home1-page" class="home-page animate__animated animate__fadeInLeft animate__faster">
+					<!-- Blog Post Information -->
+					<p class="blog-post-title" style="margin-left:15px; margin-top:10px; font-size:20pt"></p>
+	
+				<div style="margin-top: -1.5%;">
+					<p style="margin-left:10px; margin-top: -2.7%; display: inline-block;"><img draggable="false" style="padding: 0px 5px; margin-top: -3px;" src="images/time.png"><p class="blog-post-date"></p> <img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/author.png"><a class="author author:hover" style="color: red; cursor: pointer;"></a></p>
+				</div>
+					<p class="blog-post-description" style="margin-left:15px; margin-top: -2.5%; font-size: 12pt;"></p>
+					
+					<!-- Blog Post Patch Notes-->
+					<p class="bold-post1" style="margin-left:30px; margin-top:-13px; font-size:10.5pt"></p>
+					<p class="bold-post1details" style="margin-left:50px; margin-top:-15px; font-size:10.5pt"></p></p>
+					<p class="bold-post2" style="margin-left:30px; margin-top:-13px; font-size:10.5pt"></p>
+					<p class="bold-post2details" style="margin-left:50px; margin-top:-13px; font-size:10.5pt"></p>
+					<p class="bold-post2details2" style="margin-left:50px; margin-top:-13px; font-size:10.51pt"></p>
+					<p class="bold-post3" style="margin-left:30px; margin-top:-13px; font-size:10.5pt"></p>
+				</div>
+			</div>
+
+			<div class="footer" style="background-color: #252525;">
+				<div id="updating-bar" class="updating-footer">
+					<p align="center" style="line-height: 60px; text-shadow: 1.5px 1.5px black;">The Launcher App is downloading an update!</p>
+				</div>
+				<p style="text-align: left; margin-top:15px; margin-left:20px; float: left; color:rgb(133, 133, 133);">0.4.0</p><p style="text-align: center; color:grey; margin-top: 15px;">Not affiliated with Mojang Studios or CheatBreaker, LLC.</p>
+			</div>
+		</div>
+
+		<div id="servers-page" class="server-page animate__animated animate__fadeInLeft animate__faster">
+				<!-- Servers Tab Main Header Text -->
+				<p style="margin-left:2.9%; margin-top:32px; font-size:20pt">Servers running CheatBreaker</p>
+				
+				<!-- Servers Tab Servers & Connect Button-->
+                <div class="server-box2">
+					<img style="margin-left: 1.5%; margin-top: 1%; width:52px; height:52px; position: fixed;" draggable="false" src="images/minehq.png" class="minehq-image">
+					<b><u style="margin-top: 1%; margin-left: 10%; position: fixed;">MineHQ Network</u></b><p id="minehq-online" style="margin-left: 229px; margin-top: 10px;">(0/1000)</p>
+					<p class="minehq-motd motd" style="position: absolute; margin-top: -17px; margin-left: 10%; white-space: normal; width: 400px;">Loading...</p>
+					<div id="connect1" class="connect-button" style="margin-top: -32px;" onclick="startupLaunch('minehq.com')">
+						<p style="color: white; margin-top: 1%;">Connect</p>
+					</div>
+				</div>
+				
+				<div class="server-box2" style="margin-top: 10px;">
+					<img style="margin-left: 1.5%; margin-top: 1%; width:52px; height:52px; position: fixed;" draggable="false" src="images/arcane.png" class="minehq-image">
+					<b><u style="margin-top: 1%; margin-left: 10%; position: fixed;">Arcane Network</u></b><p id="arcane-online" style="margin-left: 221px; margin-top: 10px;"></p>
+					<p class="arcane-motd motd" style="position: absolute; margin-top: -17px; margin-left: 10%; white-space: normal; width: 400px;">Loading...</p>
+					<div id="connect3" class="connect-button" style="margin-top: -32px;" onclick="startupLaunch('arcane.cc')">
+						<p style="color: white;">Connect</p>
+					</div>
+				</div>
+
+				<div class="server-box2" style="margin-top: 10px;">
+					<img style="margin-left: 2%; margin-top: 1%; width:44px; height:52px; position: fixed;" draggable="false" src="images/ultra.png" class="minehq-image">
+					<b><u style="margin-top: 1%; margin-left: 10%; position: fixed;">Ultra Network</u></b><p id="ultra-online" style="margin-left: 207px; margin-top: 10px;"></p>
+					<p class="ultra-motd motd" style="position: absolute; margin-top: -17px; margin-left: 10%; white-space: normal; width: 400px;">Loading...</p>
+					<div id="connect3" class="connect-button" style="margin-top: -32px;" onclick="startupLaunch('ultra.rip')">
+						<p>Connect</p>
+					</div>
+				</div>
+		</div>
+
+
+		<div id="settings-page" style="-webkit-app-region: no-drag;" class="setting-page">
+			<p class="animate__animated animate__fadeInLeft animate__faster" style="margin-left:28px; margin-top:10px; font-size:21pt">Settings</p>
+				
+			<!-- Settings -->
+			<div class="setting-box2 animate__animated animate__fadeInLeft animate__faster">
+				<div class="slidecontainer"><input type="range" min="1024" max="16000" value="5000" class=slider id="ram-slider" oninput="updateRamValue()"></div>
+				<p style="margin-top:1%; margin-left:1.2%; position:absolute; z-index:100000;">Allocate RAM</p>
+				<p id="ram-value" style="margin-top:1%; margin-left:87.5%; position:absolute; z-index:100000;">2048 MB</p>
+				<p style="margin-top:5%; margin-left:1.2%; position:absolute; z-index:100000;">Channel</p>
+				<p style="margin-top:9.5%; margin-left:1.2%; position:absolute; z-index:100000;">On Launch</p>
+				<p style="margin-left: 75.9%; margin-top: 5.5%; position: absolute; z-index:100000;"><select id="ver"><option value="1.7">Stable</option><option value="1.72">Experimental</option><option value="1.8">1.8 Experimental</option></p></select>
+				<p style="margin-left: 79.2%; margin-top: 10.1%; position: absolute; z-index:10002;"><select id="onl"><option value="1.7">Hide launcher</option><option value="1.8">Keep open</option></p></select>
+			</div>
+			
+			<p class="animate__animated animate__fadeInLeft animate__faster" style="margin-left:28px; margin-top: 9.2%; font-size:21pt; position: fixed;">System Information</p>
+			<div class="setting-box2 animate__animated animate__fadeInLeft animate__faster" style="margin-top: 140px;">
+				<p style="margin-top:1%; margin-left:1.2%; position:absolute; z-index:100000;">CPU</p>
+				<p id="cpu-value" style="margin-top:1%; margin-left:53.5%; position:absolute; z-index:100000;"></p>
+				<p style="margin-top:5%; margin-left:1.2%; position:absolute; z-index:100000;">CPU Architecture</p>
+				<p id="arc-value" style="margin-top:5%; margin-left:94.5%; position:absolute; z-index:100000; font-weight: bold;">x64</p>
+				<p style="margin-top:9.5%; margin-left:1.2%; position:absolute; z-index:100000;">Memory</p>
+				<p id="mem-value" style="margin-top:9.5%; margin-left:87.5%; position:absolute; z-index:100000;">2048 MB</p>
+			</div>
+
+		</div>
+
+		<div id="about-page" class="abouts-page animate__animated animate__fadeInLeft animate__faster">
+			<p style="margin-left:25px; margin-top:10px; font-size:21pt">About</p>
+				
+			<p class=aboutbox></p>
+			<p style="margin-top:0%; margin-left:3.5%; position:absolute; z-index:100000;">Support</p>
+			<p onclick="openTwitter()" style="margin-top:0%; margin-left:60.5%; position:absolute; z-index:100000; text-decoration: underline; color: red; cursor: pointer;">CheatBreaker</p>
+			<p style="margin-top:2.5%; margin-left:3.5%; position:absolute; z-index:100000;">Launcher App Version</p>
+			<p style="margin-top:2.5%; margin-left:66.5%; position:absolute; z-index:100000;">0.4.0</p>
+			<p style="margin-top:5%; margin-left:3.5%; position:absolute; z-index:100000;">Locale</p>
+			<p style="margin-top:5%; margin-left:65.9%; position:absolute; z-index:100000;">en-US</p>
+			<p class="invis-box"></p>
+		</div>
+
+
+
+	</body>
+</html>

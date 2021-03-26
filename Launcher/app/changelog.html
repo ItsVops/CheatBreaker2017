@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CheatBreaker</title>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<script src="./js/launch.js"></script>
+	</head>
+	<body style="-webkit-app-region: drag">
+		<div class="pseudo-body">
+			<!-- Header -->
+			<nav class="navbar" style="background-color:#222222; -webkit-app-region: drag;">
+			<a class="navbar-brand">
+	 		<img src="images/logo.png">
+			</a>
+  			</nav>
+			<header>
+				<!-- Home Tab -->
+				<p class="home-tab" style="color:white; height:0%; padding-left:15px; padding-right:15px; padding-top: 21px; padding-bottom: 45px;" onclick="loadHome()">Home</p>
+
+				<!-- Servers Tab -->
+				<p class="servers-tab" style="color:white; height:0%; padding-left:15px; padding-right:15px; padding-top: 21px; padding-bottom: 45px;" onclick="loadServers()">Servers</p>
+				
+				<!-- Settings Tab -->
+				<p class="settings-tab" style="color:white; height:0%; padding-left:15px; padding-right:15px; padding-top: 21px; padding-bottom: 45px;" onclick="loadSettings()">Settings</p>
+
+				<!-- About Tab -->
+				<p class="about-tab" style="color:white; height:0%; padding-left:15px; padding-right:15px; padding-top: 21px; padding-bottom: 45px;" onclick="loadAbout()">About</p>
+
+				<!-- Account Switcher -->
+				<div class="accounthead" style="font-size: 16pt; color: white; height:0%; padding-left:-10%; padding-right:20px; padding-top: 21px; padding-bottom: 48px;" onclick="loadAccounts()"><img draggable="false" style="padding: 0px 15px" src="https://minotar.net/helm/ArcaneCC/32.png">ArcaneCC</div>
+
+				<!--Header Image -->
+				<div class="header-image">
+				<a draggable="false"><img src="images/home-banner.jpg"></a>
+				</div>
+				
+				<!-- Close button -->
+				<div id="close-btn" class="close-button">
+					<div class="close-button" style="color:white; height:0%; padding-left:25px; padding-right:25px; padding-top: 50px; padding-bottom: 43px;" draggable="false"><img src="images/close.png"></div>
+				</div>
+			</header>
+            <p class=invis-box3></p>
+				<!-- Blog Post Information -->
+				<p style="font-size:15pt; margin-top:-1%; margin-left:75%; font-size:21pt; color:black; position: absolute; z-index:1000;">Quick Links</p>
+				<p style="margin-left:15px; margin-top:10px; font-size:20pt">Client update [260b4dd -> 34e01eb]</p>
+				<p style="margin-left:10px; margin-top:-1.1%;"><img draggable="false" style="padding: 0px 5px; margin-top: -3px;" src="images/time.png">April 30, 2017 <img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/author.png"><a class="author author:hover" onclick=openAuthor() style="color: red; cursor: pointer;">itsjhalt</a></p>
+				<!-- Blog Post Patch Notes-->
+<!-- Changelog Announcement -->				<p style="margin-left:30px; margin-top:10px; font-size:10pt; font-weight:bolder;">Key Strokes</p>
+<!-- Log Details -->                <p style="margin-left:50px; margin-top:-1.1%; font-size:10pt">● Added background color option (pressed and not pressed)<br>
+                    ● Added text color option (pressed)<br>
+                    ● Added box size option (10 -> 32)<br>
+                    ● Added fading between pressed and not pressed background colors<br>
+                    ● Added option to replace key names with arrows</p>
+<!-- New Log Section -->				<p style="margin-left:30px; margin-top:10px; font-size:10pt; font-weight:bolder;">CheatBreaker Settings</p>
+<!-- Log Details -->               <p style="margin-left:50px; margin-top:-1.1%; font-size:10pt;">● Added 'Enable Team View' option<br>
+                    ● Added 'Team View show distance' option<br>
+                    ● Added 'Team View show off-screen markers' option<br>
+                    ● Updated 'Apply to all' button. Apply to all does not apply to background colors
+<!-- New Log Section -->				<p style="margin-left:30px; margin-top:10px; font-size:10pt; font-weight:bolder;">CPS</p>
+<!-- Log Details -->				<p style="margin-left:50px; margin-top:-1.1%; font-size:10pt">● Added background color option</p>
+<!-- New Log Section -->				<p style="margin-left:30px; margin-top:10px; font-size:10pt; font-weight:bolder;">FPS</p>
+<!-- Log Details -->				<p style="margin-left:50px; margin-top:-1.1%; font-size:10pt">● Added background color option</p>
+<p style="margin-left:30px; margin-top:10px; font-size:10pt; font-weight:bolder;">Custom Sky</p>                
+<p style="margin-left:50px; margin-top:-1.1%; font-size:10pt;">● Updated to work at any render distance<br>
+    ● Fixed overlap between sides at low render distance
+<!-- New Log Section -->				<p style="margin-left:30px; margin-top:10px; font-size:10pt; font-weight:bolder;">Minimap</p>
+<!-- Log Details -->				<p style="margin-left:50px; margin-top:-1.1%; font-size:10pt">● Added a notification when enabling when this is not allowed by every server.</p>
+<!-- New Log Section -->				<p style="margin-left:30px; margin-top:10px; font-size:10pt; font-weight:bolder;">Screenshot</p>
+<!-- Log Details -->				<p style="margin-left:50px; margin-top:-1.1%; font-size:10pt">● Allowed taking screenshot from containers</p>
+<!-- New Log Section -->				<p style="margin-left:30px; margin-top:10px; font-size:10pt; font-weight:bolder;">Notifications</p>
+<!-- Log Details -->				<p style="margin-left:50px; margin-top:-1.1%; font-size:10pt">● Moved to bottom right instead of top right</p>
+
+<p style="margin-left:15px; margin-top:10px; font-size:20pt">Launcher 0.2.10</p>
+<p style="margin-left:10px; margin-top:-1.1%;"><img draggable="false" style="padding: 0px 5px; margin-top: -3px;" src="images/time.png">April 7, 2017 <img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/author.png"><a class="author author:hover" onclick=openAuthor() style="color: red; cursor: pointer;">ArcaneCC</a></p>
+<p style="margin-left:15px; margin-top:-1.1%;">Version 0.2.10 fixes minor issues with the in-launcher server list.</b></p>
+<p class=invis-box2></p>
+<!-- Quick Links -->
+				<p class="ql-box" style="font-size:15pt; cursor: pointer; margin-top: -96.5%;" onclick="loadAccounts()"><img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/switchaccount.png"> Switch Account</p>
+				<p class="ql-box2" style="font-size:15pt; cursor: pointer; margin-top: -91.5%;" onclick="loadServers()"><img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/serverlist.png"> Server List</p>
+				<p class="ql-box3" style="font-size:15pt; cursor: pointer; margin-top: -86.5%;" onclick="loadSettings()"><img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/settings.png"> Settings</p>
+				<p class="ql-box4" style="font-size:15pt; cursor: pointer; margin-top: -81.5%;"  onclick="loadChangelog()"><img draggable="false" style="padding: 1% 5px; margin-top: -3px;" src="images/changelog.png"> Changelog</p>
+				
+				<!-- Quick Connect -->
+				<p style="margin-top: -10%; margin-top: -76%; margin-left: 75%; font-size:17pt; color:black;">Quick Connect</p>
+				<img onclick="init1()" style="margin-top: -1.5%; margin-top: -1.5%; margin-left: 76.5%; width:52px; height:52px; position: absolute; cursor: pointer;" onclick="openMinehq()" src="images/minehq.png">
+				<img onclick="init2()" style="margin-top: -1.5%; margin-top: -1.5%; margin-left: 84.5%; width:52px; height:52px; position: absolute; cursor: pointer;" onclick="openArcane()" src="images/arcane.png">
+				<img onclick="init3()" style="margin-top: -1.5%; margin-top: -1.5%; margin-left: 92.5%; width:44px; height:52px; position: absolute; cursor: pointer;" onclick="openUltra()" src="images/ultra.png">
+				<!-- Footer -->
+				<div class="footer">
+					<p style="text-align: left; margin-top:15px; margin-left:20px; float: left; color:grey">0.4.0</p><p style="text-align: center; margin-top: 15px;">Copyright &copy CheatBreaker, LLC. All rights reserved. Not affiliated with Mojang AB</p>
+				</div>
+
+				<!-- Scripts -->
+
+				<script>
+				const { shell } = require('electron')
+
+				function openAuthor() {
+    			shell.openExternal('https://namemc.com/profile/ArcaneCC')
+			}
+</script>
+
+<script>
+	function loadHome() {
+		window.location.href = "index.html";
+	}
+</script>
+<script>
+	function loadServers() {
+		window.location.href = "servers.html";
+	}
+</script>
+<script>
+	function loadSettings() {
+		window.location.href = "settings.html";
+	}
+</script>
+<script>
+	function loadAbout() {
+		window.location.href = "about.html";
+	}
+</script>
+<script>
+	function loadAccounts() {
+		window.location.href = "accounts.html";
+	}
+</script>
+<script>
+	function loadChangelog() {
+		window.location.href = "changelog.html";
+	}
+</script>
+<script>
+	async function init1() {
+		await processClient1();
+	}
+	
+	async function processClient1() {
+		await client.launch({
+			authorization: Authenticator.getAuth("ArcaneCC"),
+			root: getAppDataPath(".minecraft"),
+			server: {
+				host: "minehq.com",
+				port: "25565"
+			},
+			version: {
+				number: "1.7.10",
+				custom: "CheatBreaker"
+			},
+			memory: {
+				max: "3072",
+				min: "1024"
+			}
+		}).catch(e => {
+			prependError('genericError', e.message)
+		})
+	}
+	</script>
+	
+	<script>
+	async function init2() {
+		await processClient2();
+	}
+	
+	async function processClient2() {
+		await client.launch({
+			authorization: Authenticator.getAuth("ArcaneCC"),
+			root: getAppDataPath(".minecraft"),
+			server: {
+				host: "arcane.cc",
+				port: "25565"
+			},
+			version: {
+				number: "1.7.10",
+				custom: "CheatBreaker"
+			},
+			memory: {
+				max: "3072",
+				min: "1024"
+			}
+		}).catch(e => {
+			prependError('genericError', e.message)
+		})
+	}
+	</script>
+	
+	<script>
+	async function init3() {
+		await processClient3();
+	}
+	
+	async function processClient3() {
+		await client.launch({
+			authorization: Authenticator.getAuth("ArcaneCC"),
+			root: getAppDataPath(".minecraft"),
+			server: {
+				host: "ultra.rip",
+				port: "25565"
+			},
+			version: {
+				number: "1.7.10",
+				custom: "CheatBreaker"
+			},
+			memory: {
+				max: "3072",
+				min: "1024"
+			}
+		}).catch(e => {
+			prependError('genericError', e.message)
+		})
+	}
+	</script>
+<script>
+(function () {
+            // Retrieve remote BrowserWindow
+            const {BrowserWindow} = require('electron').remote
+
+            function init() {
+                // Close app
+                document.getElementById("close-btn").addEventListener("click", (e) => {
+                    var window = BrowserWindow.getFocusedWindow();
+                    window.close();
+                });
+            };
+
+            document.onreadystatechange =  () => {
+                if (document.readyState == "complete") {
+                    init();
+                }
+            };
+		})();
+</script>
+		</div>
+	</body>
+</html>

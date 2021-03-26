@@ -1,0 +1,48 @@
+.blog-post-title::after {
+    content: "Launcher Update 0.3.0";
+    white-space: pre-wrap;
+}
+
+.blog-post-date::after {
+    content: "March 22nd, 2021";
+    white-space: pre-wrap;
+}
+
+.blog-post-description::after {
+    content: "Welcome to the CheatBreaker 2017 launcher! The mission and goal of CheatBreaker 2017 is to \a provide the old feelings of CheatBreaker, and bring back the community to its old state.";
+    white-space: pre-wrap;
+}
+
+.bold-post1::after {
+    content: "● The CheatBreaker Launcher has been recreated from scratch.";
+    white-space: pre-wrap;
+}
+
+.bold-post1details::after {
+    content: "⚬ This means many more security and stability features have been added. This also means \a that launching is done more securely to make CheatBreaker easier to play on.";
+    white-space: pre-wrap;
+}
+
+.bold-post2::after {
+    content: "● Additional protection mechanisms added.";
+    white-space: pre-wrap;
+}
+
+.bold-post2details::after {
+    content: "⚬ The launcher now downloads JRE.";
+    white-space: pre-wrap;
+}
+
+.bold-post2details2::after {
+    content: "⚬ Patching is done more securely.";
+    white-space: pre-wrap;
+}
+
+.bold-post3::after {
+    content: "● New sliding animation added.";
+    white-space: pre-wrap;
+}
+
+.author::after {
+    content: "ArcaneCC";
+}

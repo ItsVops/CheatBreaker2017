@@ -1,5 +1,5 @@
 # OldCheatbreaker
-version files & launcher files for oldcheatbreaker.com 
+version files & launcher files for oldcheatbreaker.com (CheatBreaker 2017)
 
 put folder in versions
 
@@ -9,9 +9,4 @@ put folder in versions
 
 ``electron .``
 
-
-## to build launcher (exe)
-
-``npm i electron-toolkit``
-
-``npm run electron-toolkit``
+## if you want to build it just learn how to use electron-builder
